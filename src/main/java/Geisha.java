@@ -7,8 +7,9 @@ import net.dv8tion.jda.api.sharding.ShardManager;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
-
 import javax.security.auth.login.LoginException;
+
+import listeners.EventListener;
 
 public class Geisha {
 
@@ -35,8 +36,20 @@ public class Geisha {
         builder.setChunkingFilter(ChunkingFilter.ALL);
         builder.enableCache(CacheFlag.ONLINE_STATUS);
 
-
         shardManager = builder.build();
+
+        //Register listeners
+        shardManager.addEventListener(new EventListener());
+    }
+    public Dotenv getConfig() {
+        return config;
+    }
+
+    /** Basic getter that retrieves bot shard manager.
+     * @return the ShardManager instance for Geisha bot.
+     */
+    public ShardManager getShardManager() {
+        return shardManager;
     }
 
         public static void main(String[] args) {
