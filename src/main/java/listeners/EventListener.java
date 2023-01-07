@@ -7,10 +7,18 @@ import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Listens for events and responds with custom code.
+ *
+ * @author ch_tys
+ */
 public class EventListener extends ListenerAdapter {
 
+    /**
+     * Event fires when a user adds an emoji reaction to a message.
+     */
     @Override
-    public void onMessageReactionAdd(MessageReactionAddEvent event) {
+    public void onMessageReactionAdd(@NotNull MessageReactionAddEvent event) {
         User user = event.getUser();
         String emoji = event.getReaction().getEmoji().getAsReactionCode();
         String channelMention = event.getChannel().getAsMention();
@@ -20,6 +28,10 @@ public class EventListener extends ListenerAdapter {
         event.getGuild().getDefaultChannel().asStandardGuildMessageChannel().sendMessage(message).queue();
     }
 
+    /**
+     * Event fires when a user types in the message !ping, in which
+     * Geisha will respond with pong!
+     */
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         String message = event.getMessage().getContentRaw();
@@ -33,6 +45,7 @@ public class EventListener extends ListenerAdapter {
     public void onGuildMemberJoin(@NotNull GuildMemberJoinEvent event) {
         super.onGuildMemberJoin(event);
     }
+
 }
 
 
