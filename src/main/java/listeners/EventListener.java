@@ -1,11 +1,12 @@
 package listeners;
 
+import org.jetbrains.annotations.NotNull;
+
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Listens for events and responds with custom code.
@@ -24,7 +25,8 @@ public class EventListener extends ListenerAdapter {
         String channelMention = event.getChannel().getAsMention();
         String jumpLink = event.getJumpUrl();
 
-        String message = user.getAsTag() + " reacted to [message]("+jumpLink+") with " + emoji + " in the " + channelMention + " channel.";
+        String message = user.getAsTag() + " reacted to [message](" + jumpLink + ") with " + emoji + " in the "
+                + channelMention + " channel.";
         event.getGuild().getDefaultChannel().asStandardGuildMessageChannel().sendMessage(message).queue();
     }
 
@@ -35,7 +37,7 @@ public class EventListener extends ListenerAdapter {
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         String message = event.getMessage().getContentRaw();
-        //returns pong! when a message contains "!ping"
+        // returns pong! when a message contains "!ping"
         if (message.contains("ping")) {
             event.getChannel().sendMessage("pong!").queue();
         }
@@ -47,5 +49,3 @@ public class EventListener extends ListenerAdapter {
     }
 
 }
-
-
