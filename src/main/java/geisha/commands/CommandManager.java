@@ -1,4 +1,4 @@
-package commands;
+package geisha.commands;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -103,8 +103,6 @@ public class CommandManager extends ListenerAdapter {
     @Override
     public void onGuildReady(@NotNull GuildReadyEvent event) {
         List<CommandData> commandData = new ArrayList<>();
-        commandData.add(Commands.slash("welcome", "Get welcomed by the bot."));
-        commandData.add(Commands.slash("about", "Bot information and repository link."));
         commandData.add(Commands.slash("roles", "Display all the roles on the server."));
 
         // Command: /say <message> [channel]
@@ -129,18 +127,5 @@ public class CommandManager extends ListenerAdapter {
         event.getGuild().updateCommands().addCommands(commandData).queue();
 
     }
-
-    /*
-     * Global commands -- up to an hour to update / unlimited
-     * 
-     * @Override
-     * public void onReady(ReadyEvent event) {
-     * List<CommandData> commandData = new ArrayList<>();
-     * commandData.add(Commands.slash("welcome", "Get welcomed by the bot."));
-     * commandData.add(Commands.slash("about",
-     * "Bot information and repository link."));
-     * event.getJDA().updateCommands().addCommands(commandData).queue();
-     * }
-     */
 
 }
