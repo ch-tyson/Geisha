@@ -1,8 +1,10 @@
+package geisha;
 import javax.security.auth.login.LoginException;
 
-import commands.CommandManager;
+import org.jetbrains.annotations.NotNull;
+
+import geisha.commands.CommandRegistry;
 import io.github.cdimascio.dotenv.Dotenv;
-import listeners.EventListener;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
@@ -16,8 +18,8 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
  */
 public class Geisha {
 
-    private final Dotenv config;
-    private final ShardManager shardManager;
+    public final @NotNull Dotenv config;
+    public final @NotNull ShardManager shardManager;
 
     /**
      * Loads environment variables and builds the bot shard manager.
@@ -34,40 +36,25 @@ public class Geisha {
         builder.setActivity(Activity.watching("tyson cry"));
 
         // Enables intents for guild members, messages, and user presence
-        builder.enableIntents(GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS,
+        builder.enableIntents(GatewayIntent.MESSAGE_CONTENT,
+                GatewayIntent.GUILD_MESSAGES,
+                GatewayIntent.GUILD_MEMBERS,
                 GatewayIntent.GUILD_PRESENCES);
+
+        shardManager = builder.build();
+        shardManager.addEventListener(new CommandRegistry(this));
 
         // Setting up flags for user cache on Geisha load-up
         // builder.setMemberCachePolicy(MemberCachePolicy.ALL);
         builder.setChunkingFilter(ChunkingFilter.ALL);
         builder.enableCache(CacheFlag.ONLINE_STATUS);
-
-        shardManager = builder.build();
-
-        // Register listeners
-        shardManager.addEventListener(new EventListener(), new CommandManager());
-    }
-
-    /**
-     * Retrieves the bot environment variables
-     * 
-     * @return the DotEnv instance for the bot.
-     */
-    public Dotenv getConfig() {
-        return config;
-    }
-
-    /**
-     * Basic getter that retrieves bot shard manager.
-     * 
-     * @return the ShardManager instance for Geisha bot.
-     */
-    public ShardManager getShardManager() {
-        return shardManager;
+        
     }
 
     /**
      * Main method where the bot starts.
+     * 
+     * @params args ignored
      */
     public static void main(String[] args) {
         try {
