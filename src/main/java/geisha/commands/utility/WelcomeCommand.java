@@ -1,9 +1,9 @@
-package geisha.commands.util;
+package geisha.commands.utility;
 
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import geisha.Geisha;
 import geisha.commands.Category;
 import geisha.commands.Command;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 
 
 public class WelcomeCommand extends Command {

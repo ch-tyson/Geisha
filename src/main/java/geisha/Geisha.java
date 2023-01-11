@@ -3,7 +3,6 @@ import javax.security.auth.login.LoginException;
 
 import org.jetbrains.annotations.NotNull;
 
-import geisha.commands.CommandManager;
 import geisha.commands.CommandRegistry;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.OnlineStatus;

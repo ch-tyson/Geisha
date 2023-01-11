@@ -1,16 +1,18 @@
 package geisha.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jetbrains.annotations.NotNull;
+
+import geisha.Geisha;
+import geisha.commands.utility.*;
+import geisha.commands.fun.CoinflipCommand;
+import geisha.commands.fun.SayCommand;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
-import org.jetbrains.annotations.NotNull;
-import geisha.Geisha;
-import geisha.commands.util.*;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Registers, listens, and executes commands.
@@ -32,8 +34,10 @@ public class CommandRegistry extends ListenerAdapter {
 
                 //Utility commands
                 new WelcomeCommand(bot),
-                new AboutCommand(bot)
-
+                new AboutCommand(bot),
+                new RolesCommand(bot),
+                new SayCommand(bot),
+                new CoinflipCommand(bot)
                 
                 )
         );
