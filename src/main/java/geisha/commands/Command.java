@@ -6,6 +6,7 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 
 import geisha.Geisha;
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -22,6 +23,7 @@ public abstract class Command extends ListenerAdapter {
     public String description;
     public Category category;
     public List<OptionData> args;
+    public Permission permission;
 
     public Command(Geisha bot) {
         this.bot = bot;

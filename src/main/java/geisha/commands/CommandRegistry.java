@@ -37,7 +37,10 @@ public class CommandRegistry extends ListenerAdapter {
                 new AboutCommand(bot),
                 new RolesCommand(bot),
                 new SayCommand(bot),
-                new CoinflipCommand(bot)
+                new CoinflipCommand(bot),
+                new HelpCommand(bot)
+
+                
                 
                 )
         );
