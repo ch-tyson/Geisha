@@ -1,16 +1,17 @@
-Hello! This is the Geisha Discord bot!  <img src="https://pbs.twimg.com/media/FbUEZTJacAA0ayQ?format=jpg&name=900x900" width = 100 height = 100>  (credits: YASHIRO Nanako)
+[jda-link]: https://github.com/DV8FromTheWorld/JDA
 
-This bot was created using Java and the JDA framework, and is designed to play various simple games and provide 
-other fun features for your Discord server.
+# 🎎 Geisha 
+<img align="center" src="https://pbs.twimg.com/media/FbUEZTJacAA0ayQ?format=jpg&name=900x900" height="auto" width="100"> > (picture credits: YASHIRO Nanako)
 
-To use the bot, simply invite it to your server using the provided invite link. Once added, you can use the 
-following commands to interact with the bot:
+> - A discord bot named Geisha who can handle basic, music, and game commands made for public!
+> - I operate **currently** with only slash commands (`/commandName`).
+> - This bot is made possible by the [JDA][jda-link] library
+> - ⚠ This bot is mostly a passion project made by a beginner.
+> - Made by Tyson Cheung!
 
-/play [game] - start a game of [game] with the bot (currently supported games: tic tac toe, rock paper scissors)
-/stop - stop the current game
-/help - display a list of available commands
-In addition to these commands, the bot also includes event listeners for various actions such as reacting to 
-messages and joining/leaving voice channels. These features are designed to enhance the overall experience of using 
-the bot on your server.
+### A) Main: 🌸
+| Command | Description |
+| --- | --- |
+| /help `[category]` `[command]` | Shows information about Geisha/specific commands (includes command permissions). |
 
-If you have any issues or suggestions, please don't hesitate to let me know. Cheers!
+> - If you have any issues or suggestions, please don't hesitate to let me know. Cheers!
