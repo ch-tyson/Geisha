@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import geisha.Geisha;
 import geisha.commands.utility.*;
 import geisha.commands.fun.CoinflipCommand;
+import geisha.commands.fun.RollCommand;
 import geisha.commands.fun.SayCommand;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -38,8 +39,8 @@ public class CommandRegistry extends ListenerAdapter {
                 new RolesCommand(bot),
                 new SayCommand(bot),
                 new CoinflipCommand(bot),
-                new HelpCommand(bot)
-
+                new HelpCommand(bot),
+                new RollCommand(bot)
                 
                 
                 )
