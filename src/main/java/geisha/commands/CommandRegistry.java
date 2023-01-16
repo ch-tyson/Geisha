@@ -37,6 +37,7 @@ public class CommandRegistry extends ListenerAdapter {
                 new RolesCommand(bot),
                 new HelpCommand(bot),
                 new PingCommand(bot),
+                new AvatarCommand(bot),
 
 
                 //Fun commands
