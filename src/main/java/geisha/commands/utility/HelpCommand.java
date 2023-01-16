@@ -35,6 +35,7 @@ public class HelpCommand extends Command {
     }
 
     public void execute(SlashCommandInteractionEvent event) {
+        // run the '/help' command
         event.deferReply().queue();
 
         // Create a hashmap that groups commands by categories.

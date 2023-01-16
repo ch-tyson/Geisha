@@ -32,6 +32,7 @@ public class RollCommand extends Command {
     }
 
     public void execute(SlashCommandInteractionEvent event) {
+        // run the '/roll' command
         OptionMapping option = event.getOption("dice");
         int bound = option != null ? option.getAsInt() : 6;
         if (bound == 0)

@@ -16,7 +16,7 @@ public class WelcomeCommand extends Command {
     }
 
     public void execute(SlashCommandInteractionEvent event) {
-        // Get user
+        // run the '/welcome' command
         String userTag = event.getUser().getAsTag();
 
         event.reply("🌟 Everyone say hello to " + userTag + "✨").queue();
