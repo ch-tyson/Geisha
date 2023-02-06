@@ -34,6 +34,7 @@ public class MiyazakiCommand extends Command {
         miyazakiImages.add("https://images.summitmedia-digital.com/esquiremagph/images/2021/01/19/139566584_2930100380643403_9238180081597448_n.jpg");
         miyazakiImages.add("https://pbs.twimg.com/media/ErdC_vvVgAI39R-.jpg");
         miyazakiImages.add("https://pbs.twimg.com/media/ErdC9-WVkAcYLde.jpg");
+        miyazakiImages.add("https://pbs.twimg.com/media/EZejS0JUwAAqMio.jpg");
 
         EmbedBuilder embed = new EmbedBuilder().setColor(EmbedColors.DEFAULT.color)
                 .setImage(getRandomImage(miyazakiImages));

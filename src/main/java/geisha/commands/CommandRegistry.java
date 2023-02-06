@@ -25,7 +25,7 @@ public class CommandRegistry extends ListenerAdapter {
     /**
      * Adds commands to a global list and registers them as event listener.
      *
-     * @param bot An instance of CivBot.
+     * @param bot An instance of Geisha bot.
      */
     public CommandRegistry(Geisha bot) {
         //Utility commands
